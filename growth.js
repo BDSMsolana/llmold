@@ -2,6 +2,22 @@
   'use strict';
   const $ = selector => document.querySelector(selector);
   const input = $('#feed-input');
+  const copyContract = $('#copy-contract');
+  copyContract?.addEventListener('click', async () => {
+    const address = $('#token-address').textContent.trim();
+    try {
+      await navigator.clipboard.writeText(address);
+      $('#contract-feedback').textContent = 'CONTRACT COPIED. VERIFY IT BEFORE TRADING.';
+    } catch {
+      window.prompt('Copy the official LLMOLD contract:', address);
+      $('#contract-feedback').textContent = 'COPY THE FULL ADDRESS SHOWN ABOVE.';
+    }
+  });
+  const tokenLink = document.createElement('a');
+  tokenLink.href = '#spore';
+  tokenLink.className = 'button ghost';
+  tokenLink.textContent = '$LLMOLD IS LIVE ↗';
+  $('.hero-actions').append(tokenLink);
   const samples = ['haunted office yogurt', 'wet pope lasagna', 'forbidden ethernet soup', 'sock divorce lawyer', 'sentient keyboard crumbs', 'microwave tax ritual', 'fermented browser history', 'emotional support fungus'];
   const randomButton = document.createElement('button');
   randomButton.type = 'button';
