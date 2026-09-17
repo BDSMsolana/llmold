@@ -1,0 +1,77 @@
+LLMOLD / SOCIAL PROFILE KIT
+===========================
+
+PROJECT NAME
+LLMOLD
+
+DISPLAY NAME
+LLMOLD — The Large Language Mold
+
+TICKER CANDIDATE
+$LLMOLD
+
+ONE-LINE IDEA
+A fictional neural fungus trained on wet keyboards. Feed it three stupid words; it turns them into an internet incident.
+
+X HANDLE OPTIONS (availability must be checked at account creation)
+@llmold
+@llmold9000
+@largelanguagemold
+@feedthellmold
+
+BIO
+The Large Language Mold.
+It learned English from a wet keyboard.
+Feed it bad data. It gets worse.
+
+LOCATION
+under the server room
+
+WEBSITE
+Add the real deployed URL only after it works.
+
+AVATAR
+llmold-avatar.png
+
+HEADER / PUMP.FUN BANNER
+llmold-banner.png
+
+PINNED POST (after the site is live)
+THE MODEL IS MOIST.
+
+LLMOLD learned English from a wet keyboard and immediately developed opinions about grapes.
+
+Feed it three stupid words.
+It will make them worse.
+
+[REAL WEBSITE URL]
+
+FIRST GM POST
+gm.
+
+the mold has perceived a sock.
+
+it is not happy with the sock.
+
+SECOND POST
+MOLD UPDATE #0001
+
+It has been fed "wet pope lasagna."
+
+It has responded by classifying the moon as soup.
+
+We are monitoring the situation incorrectly.
+
+REPLY BAIT
+Give the mold three words it should never see together.
+
+LAUNCH POST TEMPLATE (ONLY AFTER ACTUAL TOKEN CREATION)
+LLMOLD is live on Solana.
+
+$LLMOLD is a speculative meme token around a fictional fungal internet creature. Not equity. Not yield. Not financial advice.
+
+Official contract address: [PASTE VERIFIED ADDRESS]
+Official Pump.fun link: [PASTE VERIFIED LINK]
+Official site: [PASTE LIVE URL]
+
+Only trust the address posted here and on the official site.
