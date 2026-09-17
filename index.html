@@ -30,7 +30,9 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="final.css">
   <link rel="stylesheet" href="card-layout.css">
+  <link rel="stylesheet" href="growth.css">
   <script src="app.js" defer></script>
+  <script src="growth.js" defer></script>
 </head>
 <body>
   <div class="film-grain" aria-hidden="true"></div><div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
@@ -55,7 +57,7 @@
     <section class="warning-strip" aria-label="Mold warnings"><div>THE MODEL IS MOIST <b>✳</b> FEED IT SOMETHING WORSE <b>✳</b> THE MODEL IS LISTENING <b>✳</b> DO NOT TRAIN IT <b>✳</b> THE MODEL IS MOIST <b>✳</b></div></section>
     <section class="transmission shell"><div class="transmission-image" role="img" aria-label="LLMOLD in its server room"></div><div class="transmission-note"><span>INTERNAL TRANSMISSION / 001</span><b>THE SERVER ROOM IS NOW A HABITAT.</b><small>It has requested more keyboards.</small></div></section>
     <section class="containment shell" id="incident-log">
-      <div class="section-heading"><div><p class="section-kicker">01 / LIVE CONTAINMENT LOG</p><h2>THE MOLD<br>KEEPS <em>NOTICING.</em></h2></div><p>One incident enters the record each day. The record is not a roadmap. It is evidence that the room has changed.</p></div>
+      <div class="section-heading"><div><p class="section-kicker">01 / FICTIONAL CONTAINMENT LOG</p><h2>THE MOLD<br>KEEPS <em>NOTICING.</em></h2></div><p>A different observation from the specimen files each UTC day. A rotating fictional log, not a live AI feed. Come back to see what it misunderstands next.</p></div>
       <div class="containment-grid">
         <article class="daily-incident"><div class="screen-header"><span>DAILY INCIDENT / <b id="daily-id">000</b></span><span class="live-dot">LIVE</span></div><div class="daily-content"><p class="incident-label">OBSERVATION</p><h3>THE USB PORTS<br>ARE <em>WARM.</em></h3><p>LLMOLD believes every cable remembers the hands that touched it. It has started asking them questions after midnight.</p></div><div class="daily-footer"><span>THREAT: LOW-LEVEL PERSONAL</span><a id="share-daily" href="https://x.com/intent/tweet?text=TODAY%27S%20LLMOLD%20INCIDENT%3A%20THE%20USB%20PORTS%20ARE%20WARM.%20IT%20THINKS%20THEY%20REMEMBER%20EVERY%20HAND%20THAT%20TOUCHED%20THEM.%20https%3A%2F%2Fllmold.lol" target="_blank" rel="noopener noreferrer">POST INCIDENT ↗</a></div></article>
         <aside class="mutation-panel" aria-labelledby="mutation-title"><p class="eyebrow">OPEN MUTATION BRIEF</p><h3 id="mutation-title">WHAT SHOULD<br>IT NOTICE NEXT?</h3><div class="mutation-options" role="group" aria-label="Choose a mutation to post"><button type="button" data-mutation="THE WARM USB PORTS">01 <span>THE WARM USB PORTS</span></button><button type="button" data-mutation="THE FALSE MEMORY OF A SOCK">02 <span>THE FALSE MEMORY OF A SOCK</span></button><button type="button" data-mutation="AN UNREASONABLE FEAR OF GRAPES">03 <span>AN UNREASONABLE FEAR OF GRAPES</span></button></div><p class="selection-copy" id="mutation-copy">CHOOSE ONE. THEN POST IT SO THE LAB CAN PRETEND TO COUNT.</p><a class="text-button mutation-post" id="mutation-post" href="https://x.com/LLMOLD" target="_blank" rel="noopener noreferrer">TAKE IT TO THE LEAK ↗</a></aside>
@@ -67,6 +69,18 @@
     <section class="protocol shell"><div class="section-kicker">04 / SPREAD PROTOCOL</div><div class="protocol-grid"><article><span>01</span><h3>Feed it.</h3><p>Three stupid words become a documented incident.</p></article><article><span>02</span><h3>Post it.</h3><p>Put the receipt where the Mold can pretend to see it.</p></article><article><span>03</span><h3>Make it canon.</h3><p>The community picks what the creature notices next.</p></article></div></section>
     <section class="molt shell"><div class="molt-copy"><p class="eyebrow">05 / THE LONG MOLD</p><h2>A CHARACTER,<br>NOT A <em>CHECKLIST.</em></h2><p>LLMOLD changes slowly enough that each bad idea can become canon: a new eye, a rotten peripheral, a false memory, an unreasonable fear of grapes. The community writes the creature; the creature ruins the community’s language.</p></div><div class="molt-card"><span>CANON EXAMPLE</span><b>THE MOLD HAS DECLARED<br>THE MOON “WET HARDWARE.”</b><small>CAUSE: UNVERIFIED</small></div></section>
     <section class="token-zone" id="spore"><div class="shell token-grid"><div><p class="eyebrow">06 / THE SPORE</p><h2>$LLMOLD</h2></div><div><p>LLMOLD is building a community around a fictional fungal internet incident. Any future Solana meme token is not company equity, a membership pass, a yield source or a promise that the Mold will become less disgusting.</p><p class="token-status">STATUS: PRE-LAUNCH. NO OFFICIAL CONTRACT ADDRESS HAS BEEN PUBLISHED. TRUST ONLY LINKS FROM THIS SITE AND @LLMOLD.</p></div></div></section>
+    <section class="growth-roadmap shell" id="roadmap" aria-labelledby="roadmap-title">
+      <p class="eyebrow">07 / THE SPREAD PLAN</p>
+      <h2 id="roadmap-title">LESS PROMISE.<br><em>MORE EVIDENCE.</em></h2>
+      <p class="growth-intro">The goal: a creature people return to, write for and recognize outside this room. Participation is free. Holding a token is never required.</p>
+      <div class="growth-stages">
+        <article><span>01 / AVAILABLE NOW</span><h3>FEED. SAVE. SHARE.</h3><p>Browser-only Feeder, downloadable incident cards, random nutrients, a local report archive and rotating fictional observations.</p><a href="#feeder">TRY THE FEEDER ↓</a></article>
+        <article><span>02 / NEXT MILESTONE</span><h3>THE FIRST CANON.</h3><p>Invite community incident submissions in Telegram. Curate the first three into an illustrated canon entry, crediting each author with permission.</p><a href="https://t.me/LLMOLD" target="_blank" rel="noopener noreferrer">SUBMIT AN INCIDENT ↗</a></article>
+        <article><span>03 / PLANNED EXPANSION</span><h3>BUILD THE HABITAT.</h3><p>A public canon gallery and new card templates. Prioritize the ideas people actually use, then publish a changelog as improvements ship.</p><a href="https://github.com/BDSMsolana/llmold" target="_blank" rel="noopener noreferrer">INSPECT THE SOURCE ↗</a></article>
+      </div>
+      <p class="containment-note">NEXT AND PLANNED ARE DEVELOPMENT INTENTIONS, NOT SHIPPED FEATURES OR GUARANTEED DATES. NO PRICE TARGETS. NO PROMISED RETURNS.</p>
+    </section>
+    <section class="colony shell" id="community"><p class="eyebrow">THE GROUP CHAT HAS A SMELL.</p><h2>ENTER THE <em>COLONY.</em></h2><p>Bring your incident. Suggest a mutation. Please do not give it admin.</p><div class="hero-actions"><a class="button primary" href="https://t.me/LLMOLD" target="_blank" rel="noopener noreferrer">JOIN TELEGRAM ↗</a><a class="button ghost" href="https://x.com/LLMOLD" target="_blank" rel="noopener noreferrer">OFFICIAL X ↗</a><a class="button ghost" href="https://github.com/BDSMsolana/llmold" target="_blank" rel="noopener noreferrer">PUBLIC SOURCE ↗</a></div><p class="containment-note">VERIFY TOKEN DETAILS THROUGH @LLMOLD. WE DO NOT NEED YOUR SEED PHRASE. DO NOT TRUST CONTRACT ADDRESSES SENT BY STRANGERS.</p></section>
     <section class="endcap shell"><p class="eyebrow">END OF TRANSMISSION</p><h2>IT DOESN'T<br>KNOW WHAT<br><em>YOU ARE.</em></h2><a class="button primary" href="#feeder">MAKE IT WORSE <b>↑</b></a></section>
   </main>
   <canvas id="incident-canvas" width="1600" height="900" aria-hidden="true"></canvas>

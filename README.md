@@ -18,7 +18,10 @@ On Windows, `START.cmd` launches the same local preview server.
 
 - `index.html`, `styles.css`, `app.js` — responsive launch site, local Mold Feeder and downloadable incident cards.
 - `assets/llmold-avatar.png` — opaque square avatar / coin image.
-- `assets/llmold-banner.png` — wide header for X and Pump.fun.
+- `assets/llmold-scene-banner.png` — original wide project banner.
+- `assets/llmold-x-card-v3.jpg` — 1200×600 social preview; legacy preview PNG URLs serve the same composition.
+- `growth.js`, `growth.css` — random nutrients, last-eight local report archive, rotating fictional observations, community links and staged development plan.
+- `POST-LAUNCH-CAMPAIGN.md` — nine ready-to-edit English posts, Russian publication instructions and measurable community goals.
 - `assets/social-profile.txt` — copy-ready X profile, first posts and post-launch template.
 - `CONCEPT.md` — lore, community ritual, content system and safety boundary.
 
@@ -29,3 +32,17 @@ On Windows, `START.cmd` launches the same local preview server.
 3. Use the exact avatar/banner files in `assets`.
 4. Do not state that `$LLMOLD` exists until it actually does.
 5. If a token is issued, add its verified address and official link only after the owner signs the creation transaction.
+
+## Deploy
+
+Run `./build.ps1` to stage the allowlisted public files in `.cf-deploy`, then:
+
+```powershell
+npx --yes wrangler deploy --domain llmold.lol --domain www.llmold.lol
+```
+
+Always include both domains. Do not publish this entire project folder as static assets. Campaign notes and repository metadata are not website assets.
+
+## Data and behavior
+
+The Feeder uses authored random outcomes, not a remote AI model. Reports and mutation picks stay in this browser. The archive retains at most eight reports; clearing browser data removes them. If browser storage is blocked, the feeder still works for the current page session. Observation text rotates through seven fictional entries by UTC day. There is no live vote tally or global user counter. Public source code is not a token audit.
