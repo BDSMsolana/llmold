@@ -45,4 +45,6 @@ Always include both domains. Do not publish this entire project folder as static
 
 ## Data and behavior
 
+Lab update 02: `cards.js` provides three PNG formats. `lab.js` and `lab.css` provide the Canon Vault, chapter links and copy-only submission helper. Starter chapters are project-authored fiction, not community votes or submissions. The pitch helper does not persist or upload the entered credit name/story. See the on-site release notes for shipped versus planned features.
+
 The Feeder uses authored random outcomes, not a remote AI model. Reports and mutation picks stay in this browser. The archive retains at most eight reports; clearing browser data removes them. If browser storage is blocked, the feeder still works for the current page session. Observation text rotates through seven fictional entries by UTC day. There is no live vote tally or global user counter. Public source code is not a token audit.

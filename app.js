@@ -43,7 +43,23 @@
     context.font = original;
   }
   async function drawCard() { const context = canvas.getContext('2d'); context.fillStyle = '#0a0f06'; context.fillRect(0, 0, canvas.width, canvas.height); const gradient = context.createRadialGradient(1260, 420, 30, 1250, 430, 750); gradient.addColorStop(0, 'rgba(200,255,77,.28)'); gradient.addColorStop(1, 'rgba(10,15,6,0)'); context.fillStyle = gradient; context.fillRect(0, 0, canvas.width, canvas.height); context.strokeStyle = '#637620'; context.lineWidth = 3; context.strokeRect(38, 38, 1524, 824); const image = new Image(); image.src = 'assets/llmold-avatar.png'; await image.decode(); context.save(); context.beginPath(); context.arc(1260, 445, 330, 0, Math.PI * 2); context.clip(); context.drawImage(image, 930, 115, 660, 660); context.restore(); context.fillStyle = '#c8ff4d'; context.font = '900 118px Arial'; context.fillText('LLMOLD', 110, 195); context.fillStyle = '#efe2b7'; context.font = '32px Courier New'; context.fillText('THE LARGE LANGUAGE MOLD', 115, 252); context.fillStyle = '#e7efbd'; context.font = '24px Courier New'; context.fillText(`LOCAL INCIDENT / ${report.id}`, 115, 370); context.fillStyle = '#c8ff4d'; context.font = '900 68px Arial'; wrapped(context, report.nutrient, 110, 460, 770, 75); context.strokeStyle = '#52621b'; context.lineWidth = 2; context.beginPath(); context.moveTo(110, 600); context.lineTo(875, 600); context.stroke(); context.fillStyle = '#d0d3ad'; context.font = '30px Courier New'; wrapped(context, report.outcome, 110, 660, 760, 42); context.fillStyle = '#83934b'; context.font = '21px Courier New'; context.fillText('IT LEARNED ENGLISH FROM A WET KEYBOARD  /  llmold.lol', 110, 812); }
-  downloadButton.addEventListener('click', async () => { if (!report) return; downloadButton.textContent = 'GROWING CARD…'; try { await drawCard(); const link = document.createElement('a'); link.download = `llmold-incident-${report.id}.png`; link.href = canvas.toDataURL('image/png'); link.click(); downloadButton.textContent = 'CARD DOWNLOADED ↓'; } catch { downloadButton.textContent = 'CARD FAILED TO MOLT.'; } window.setTimeout(() => { downloadButton.textContent = 'DOWNLOAD CARD ↓'; }, 2400); });
+  downloadButton.addEventListener('click', async () => {
+    if (!report || downloadButton.disabled) return;
+    const snapshot = { ...report };
+    const style = document.querySelector('#card-style').value;
+    downloadButton.disabled = true;
+    downloadButton.textContent = 'GROWING CARD…';
+    try {
+      await window.LLMoldCards.render(canvas, snapshot, style);
+      const link = document.createElement('a');
+      link.download = `llmold-${style}-${snapshot.id}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      downloadButton.textContent = 'CARD DOWNLOADED ↓';
+    } catch { downloadButton.textContent = 'CARD FAILED. TRY AGAIN.'; }
+    finally { downloadButton.disabled = false; }
+    window.setTimeout(() => { downloadButton.textContent = 'DOWNLOAD CARD ↓'; }, 2400);
+  });
 
   mutationButtons.forEach(button => { button.setAttribute('aria-pressed', 'false'); button.addEventListener('click', () => { const mutation = button.dataset.mutation; mutationButtons.forEach(option => { option.classList.toggle('selected', option === button); option.setAttribute('aria-pressed', String(option === button)); }); storage.set('llmold.mutationPick', mutation); mutationCopy.textContent = `LOCAL PICK: ${mutation}. SHARE IT WITH THE COLONY. THIS IS NOT A SERVER-SIDE VOTE.`; mutationPost.href = `https://x.com/intent/tweet?text=${encodeURIComponent(`LLMOLD SHOULD NOTICE NEXT: ${mutation}.\n\nhttps://llmold.lol`)}`; mutationPost.textContent = 'POST YOUR MUTATION ↗'; }); });
   const savedMutation = storage.get('llmold.mutationPick'); if (savedMutation) { const selected = [...mutationButtons].find(button => button.dataset.mutation === savedMutation); if (selected) selected.click(); }

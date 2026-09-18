@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-18 — Lab update 02
+
+- Released the Canon Vault with three explicitly project-authored fictional chapters, direct chapter links, PNG downloads and Feeder remix actions.
+- Added Terminal, Case File and Quarantine export styles at 1600×900. Style preferences stay local.
+- Added a copy-only pitch helper: no automatic submission, no storage of names or stories.
+- Updated the roadmap to distinguish shipped starter lore from the upcoming permission-based community edition.
+- Captured report state at export time to prevent a later generation from changing the download.
+- Kept the official contract, Pump.fun link and social preview assets unchanged.
+
 ## 2026-09-17 — Community participation update
 
 - Added random nutrient suggestions and a local archive of the last eight Feeder reports.
