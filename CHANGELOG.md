@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-18 — Evidence preview
+
+- Added an inline PNG card preview to the Feeder that updates when selecting a format or reopening an archived report.
+- Prevented stale asynchronous renders from replacing a newer preview during quick style changes.
+- Prepared five numbered campaign illustrations in the local social assets folder (not deployed as website assets).
+
 ## 2026-09-18 — Lab update 02
 
 - Released the Canon Vault with three explicitly project-authored fictional chapters, direct chapter links, PNG downloads and Feeder remix actions.

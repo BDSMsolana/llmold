@@ -10,10 +10,49 @@
   chooser.innerHTML = '<label for="card-style">EVIDENCE FORMAT</label><select id="card-style"><option value="terminal">01 / TERMINAL — acid green</option><option value="casefile">02 / CASE FILE — aged paper</option><option value="quarantine">03 / QUARANTINE — warning amber</option></select><p>Same incident. Three ways to deny responsibility. Downloads as a 1600 × 900 PNG.</p>';
   document.querySelector('.incident-actions').before(chooser);
   const select = document.querySelector('#card-style');
+  const preview = document.createElement('canvas');
+  preview.id = 'card-preview';
+  preview.hidden = true;
+  preview.setAttribute('role', 'img');
+  preview.setAttribute('aria-label', 'Preview of your downloadable incident card');
+  const previewStatus = document.createElement('p');
+  previewStatus.className = 'preview-status';
+  previewStatus.setAttribute('role', 'status');
+  chooser.append(preview, previewStatus);
+  let previewReport = null;
+  let previewVersion = 0;
+  async function refreshPreview() {
+    if (!previewReport) return;
+    const version = ++previewVersion;
+    const snapshot = { ...previewReport };
+    const style = select.value;
+    previewStatus.textContent = 'PREPARING PREVIEW…';
+    try {
+      const buffer = document.createElement('canvas');
+      await render(buffer, snapshot, style);
+      if (version !== previewVersion) return;
+      preview.width = buffer.width; preview.height = buffer.height;
+      preview.getContext('2d').drawImage(buffer, 0, 0);
+      preview.dataset.style = style;
+      preview.dataset.report = snapshot.id;
+      preview.setAttribute('aria-label', `${style} card preview: ${snapshot.nutrient}. ${snapshot.outcome}`);
+      preview.hidden = false;
+      previewStatus.textContent = 'PREVIEW / YOUR DOWNLOAD USES THIS FORMAT.';
+    } catch {
+      if (version !== previewVersion) return;
+      preview.hidden = true;
+      previewStatus.textContent = 'PREVIEW UNAVAILABLE. YOU CAN STILL TRY DOWNLOAD CARD.';
+    }
+  }
+  document.addEventListener('llmold:display', event => {
+    previewReport = { ...event.detail };
+    refreshPreview();
+  });
   try { const saved = localStorage.getItem('llmold.cardStyle'); if (Object.hasOwn(palettes, saved)) select.value = saved; } catch {}
   function update() {
     document.querySelector('#incident').dataset.cardStyle = select.value;
     try { localStorage.setItem('llmold.cardStyle', select.value); } catch {}
+    refreshPreview();
   }
   select.addEventListener('change', update); update();
   function fit(ctx, text, x, top, width, height, initialSize, family, weight = '') {
